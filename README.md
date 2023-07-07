@@ -1,1 +1,1 @@
-# faseboard-miniproject
+# fastboard-miniproject
