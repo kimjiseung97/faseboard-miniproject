@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FastboardProjectApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FastboardProjectApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FastboardProjectApplication.class, args);
+    }
 
 }
