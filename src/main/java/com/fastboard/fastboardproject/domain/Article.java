@@ -1,6 +1,5 @@
 package com.fastboard.fastboardproject.domain;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +8,9 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.querydsl.binding.QuerydslPredicate;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Objects;
