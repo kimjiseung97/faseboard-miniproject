@@ -37,7 +37,6 @@ class ArticleControllerTest {
     }
 
 
-    @Disabled("구현중")
     @Test
     @DisplayName("[view][GET] 게시글 상세 페이지 - 정상호출")
     public void givenNothing_whenRequestArticles_thenReturnArticlesviewDetail() throws Exception {
@@ -47,7 +46,7 @@ class ArticleControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
                 .andExpect(view().name("articles/detail"))
-                .andExpect(model().attributeExists("articles"))
+                .andExpect(model().attributeExists("article"))
                 .andExpect(model().attributeExists("articleComments"));
 
 
