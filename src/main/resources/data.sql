@@ -376,6 +376,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
 -- 1000 댓글
 insert into article_comment (article_id, content, created_at, modified_at, created_by, modified_by) values
                                                                                                         (49, 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '2021-03-02 22:40:04', '2021-04-27 15:38:09', 'Lind', 'Orv'),
+
                                                                                                         (108, 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '2021-06-08 04:36:02', '2022-01-25 15:35:42', 'Trstram', 'Loy'),
                                                                                                         (31, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', '2021-04-10 00:47:10', '2021-02-06 20:58:04', 'Duff', 'Early'),
                                                                                                         (120, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', '2021-08-21 08:39:39', '2021-11-17 22:47:35', 'Sydney', 'Boony'),
@@ -675,4 +676,11 @@ insert into article_comment (article_id, content, created_at, modified_at, creat
                                                                                                         (77, 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', '2022-01-08 02:32:10', '2021-07-23 12:21:01', 'Harlen', 'Zacharia'),
                                                                                                         (56, 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2021-11-18 01:32:48', '2021-06-06 01:59:25', 'Vittorio', 'Milty'),
                                                                                                         (19, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', '2021-05-07 23:57:29', '2021-04-03 21:55:11', 'Oliver', 'Graehme')
+;
+
+
+-- 테스트 계정
+-- TODO: 테스트용이지만 비밀번호가 노출된 데이터 세팅. 개선하는 것이 좋을 지 고민해 보자.
+insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
+    ('uno', 'asdf1234', 'Uno', 'uno@mail.com', 'I am Uno.', now(), 'uno', now(), 'uno')
 ;
