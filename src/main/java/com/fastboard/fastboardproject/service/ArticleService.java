@@ -3,6 +3,7 @@ package com.fastboard.fastboardproject.service;
 import com.fastboard.fastboardproject.Repository.ArticleRepository;
 import com.fastboard.fastboardproject.domain.type.SearchType;
 import com.fastboard.fastboardproject.dto.ArticleDTO;
+import com.fastboard.fastboardproject.dto.ArticleUpdateDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,17 @@ public class ArticleService {
         return Page.empty();
     }
     @Transactional(readOnly = true)
-
     public ArticleDTO searchArticle(long l) {
         return null;
+    }
+
+    public void saveArticle(ArticleDTO dto) {
+
+    }
+
+    public void updateArticle(long l, ArticleUpdateDTO dto) {
+    }
+
+    public void deleteArticle(long ArticleId) {
     }
 }
