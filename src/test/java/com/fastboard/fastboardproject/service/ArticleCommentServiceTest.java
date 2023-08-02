@@ -3,13 +3,10 @@ package com.fastboard.fastboardproject.service;
 import com.fastboard.fastboardproject.Repository.ArticleCommentRepository;
 import com.fastboard.fastboardproject.Repository.ArticleRepository;
 import com.fastboard.fastboardproject.domain.Article;
-import com.fastboard.fastboardproject.dto.ArticleCommentDTO;
-import com.mysema.commons.lang.Assert;
-import org.assertj.core.api.Assertions;
+import com.fastboard.fastboardproject.dto.ArticleCommentDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -18,7 +15,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
 
 @DisplayName("비즈니스 로직 - 댓글")
@@ -46,7 +42,7 @@ class ArticleCommentServiceTest {
                 Article.of("title","content","#java"))
         );
 
-        List<ArticleCommentDTO> articleComments = sut.searchArticleComment(articleId);
+        List<ArticleCommentDto> articleComments = sut.searchArticleComment(articleId);
 
         assertThat(articleComments).isNull();
 
@@ -67,7 +63,7 @@ class ArticleCommentServiceTest {
                 Article.of("title","content","#java"))
         );
 
-        List<ArticleCommentDTO> articleComments = sut.searchArticleComment(articleId);
+        List<ArticleCommentDto> articleComments = sut.searchArticleComment(articleId);
 
         assertThat(articleComments).isNull();
 

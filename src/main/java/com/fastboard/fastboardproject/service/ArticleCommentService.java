@@ -2,7 +2,7 @@ package com.fastboard.fastboardproject.service;
 
 import com.fastboard.fastboardproject.Repository.ArticleCommentRepository;
 import com.fastboard.fastboardproject.Repository.ArticleRepository;
-import com.fastboard.fastboardproject.dto.ArticleCommentDTO;
+import com.fastboard.fastboardproject.dto.ArticleCommentDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +19,7 @@ public class ArticleCommentService {
     private final ArticleCommentRepository articleCommentRepository;
 
     @Transactional(readOnly = true)
-    public List<ArticleCommentDTO> searchArticleComment(Long articleId) {
+    public List<ArticleCommentDto> searchArticleComment(Long articleId) {
         return List.of();
     }
 }
