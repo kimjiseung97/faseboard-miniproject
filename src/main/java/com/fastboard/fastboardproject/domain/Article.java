@@ -3,15 +3,9 @@ package com.fastboard.fastboardproject.domain;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.data.querydsl.binding.QuerydslPredicate;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -49,6 +43,11 @@ public class Article extends AuditingFields{
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
 
+    @Setter
+    @ManyToOne(optional = false)
+    private UserAccount userAccount; // 유저 정보 (ID)
+
+
 
     protected Article() {
     }
@@ -59,7 +58,7 @@ public class Article extends AuditingFields{
         this.hashtag = hashtag;
     }
 
-    public static Article of(String title, String content, String hashTag) {
+    public static Article of(UserAccount entity, String title, String content, String hashTag) {
         return new Article(title, content, hashTag);
     }
 
