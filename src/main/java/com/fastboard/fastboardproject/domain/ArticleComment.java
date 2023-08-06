@@ -3,15 +3,9 @@ package com.fastboard.fastboardproject.domain;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.data.querydsl.binding.QuerydslPredicate;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
@@ -36,6 +30,12 @@ public class ArticleComment extends AuditingFields{
     @Column(nullable = false, length = 500)
     private String content;
 
+
+    @Setter
+    @ManyToOne(optional = false)
+    UserAccount userAccount; // 유저 정보 (ID)
+
+
     protected ArticleComment() {
     }
 
@@ -44,7 +44,7 @@ public class ArticleComment extends AuditingFields{
         this.content = content;
     }
 
-    public static ArticleComment of(Article article, String content) {
+    public static ArticleComment of(Article article, UserAccount entity, String content) {
         return new ArticleComment(article, content);
     }
 
