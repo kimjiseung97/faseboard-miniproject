@@ -4,6 +4,7 @@ import com.fastboard.fastboardproject.domain.type.SearchType;
 import com.fastboard.fastboardproject.dto.response.ArticleResponse;
 import com.fastboard.fastboardproject.dto.response.ArticleWithCommentsResponse;
 import com.fastboard.fastboardproject.service.ArticleService;
+import com.fastboard.fastboardproject.service.PaginationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,6 +28,9 @@ public class ArticleController {
 
     private final ArticleService articleService;
 
+    private final PaginationService paginationService;
+
+
     @GetMapping
     public String articles(
             @RequestParam(required = false) SearchType searchType,
@@ -35,9 +39,9 @@ public class ArticleController {
             ModelMap map
     ) {
         Page<ArticleResponse> articles = articleService.searchArticles(searchType, searchValue, pageable).map(ArticleResponse::from);
-
+        List<Integer> barNumbers = paginationService.getPaginationBarNumbers(pageable.getPageNumber(), articles.getTotalPages());
         map.addAttribute("articles", articles);
-
+        map.addAttribute("paginationBarNumbers", barNumbers);
         return "articles/index";
     }
 
