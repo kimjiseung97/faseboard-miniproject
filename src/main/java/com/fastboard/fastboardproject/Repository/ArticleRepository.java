@@ -1,5 +1,6 @@
 package com.fastboard.fastboardproject.Repository;
 
+import com.fastboard.fastboardproject.Repository.querydsl.ArticleRepositoryCustom;
 import com.fastboard.fastboardproject.domain.Article;
 import com.fastboard.fastboardproject.domain.ArticleComment;
 import com.fastboard.fastboardproject.domain.QArticle;
@@ -20,6 +21,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface ArticleRepository extends
         JpaRepository<Article,Long>,
         QuerydslBinderCustomizer<QArticle>,
+        ArticleRepositoryCustom,
         QuerydslPredicateExecutor<Article>
 {
     Page<Article> findByTitleContaining(String title, Pageable pageable);
